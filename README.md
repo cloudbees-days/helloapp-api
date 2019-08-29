@@ -1,3 +1,3 @@
 # helloworld-api
-A simple Jenkins Pipeline repo to use with the CloudBees DevOptics workshop.
+A simple Jenkins Pipeline repo to demonstrate Value Streams and to use with the CloudBees DevOptics Workshop
 
