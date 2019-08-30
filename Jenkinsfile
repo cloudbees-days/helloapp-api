@@ -19,8 +19,12 @@ pipeline {
         branch 'test'
       }
       steps {
-        copyArtifacts projectName: '../helloworld-api/development'
-        gateConsumesArtifact file: 'application.sh'
+        script{
+          if (fileExists('../helloworld-api/development')) {        
+            copyArtifacts projectName: '../helloworld-api/development'
+            gateConsumesArtifact file: 'application.sh'
+          }
+        }
       }
     }
     stage('Deploy') {
@@ -29,8 +33,12 @@ pipeline {
         branch 'master'
       }
       steps {
-        copyArtifacts projectName: '../helloworld-api/development'
-        gateConsumesArtifact file: 'application.sh'
+        script{
+          if (fileExists('../helloworld-api/development')) {
+            copyArtifacts projectName: '../helloworld-api/development'
+            gateConsumesArtifact file: 'application.sh'
+          }
+        }
       }
     }
   }
